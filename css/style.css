@@ -1,7 +1,7 @@
 :root {
   /* Palette drawn from the original ekjphd.com WordPress theme:
      mint/seafoam body background with vivid blue links. */
-  --color-bg: #beddd7;          /* WP body background (mint) */
+  --color-bg: #d8ede8;          /* lighter teal (a few shades up from WP mint) */
   --color-surface: #ffffff;     /* content cards */
   --color-text: #29302e;
   --color-muted: #566260;
@@ -510,21 +510,59 @@ section {
    ============================================================ */
 
 body.elle-theme {
-  --color-bg: #eaf1f4;
+  /* keep the platform's slate-blue accents, but share the site background */
   --color-surface: #ffffff;
   --color-border: #c7d8e2;
   --color-muted: #566472;
   --color-text: #20303f;
   --color-accent: #3f6184;
   --color-accent-dark: #2f4a66;
-  --color-header: #3f6184;
   --color-header-dark: #2f4a66;
   --color-heading: #2f4a66;
 }
 
-body.elle-theme .page-figure img,
-body.elle-theme .gallery img {
+body.elle-theme .page-figure img {
   border-radius: 12px;
+}
+
+/* Per-game entries (title, team dropdown, thumbnail, description) */
+
+.game-entry {
+  padding: 14px 0 24px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.game-entry:last-of-type {
+  border-bottom: none;
+}
+
+.game-entry h3 {
+  margin: 0 0 10px;
+}
+
+.game-entry .year {
+  font-weight: 400;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.game-entry .team {
+  max-width: 540px;
+  margin: 0 0 14px;
+}
+
+.game-thumb {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.16);
+  margin: 0 0 14px;
+}
+
+.game-entry p {
+  margin-bottom: 0;
 }
 
 /* Development team dropdowns */
