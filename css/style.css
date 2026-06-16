@@ -173,42 +173,47 @@ li {
   .nav-links a { padding: 10px 12px; }
 }
 
-/* Hero */
+/* Intro (headshot + bio) */
 
-.hero {
-  padding: 56px 0 40px;
+.intro {
+  padding: 48px 0 28px;
 }
 
-.hero-inner {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 40px;
-  align-items: center;
+.intro .container {
+  display: flow-root; /* contain the floated headshot */
 }
 
-.hero-photo img {
+.intro .headshot {
+  float: right;
+  width: 230px;
   border-radius: var(--radius);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.14);
+  margin: 6px 0 16px 30px;
 }
 
-.hero-text h1 {
-  margin-bottom: 0.2em;
+.intro h1 {
+  margin-bottom: 0.1em;
 }
 
-.hero-text .tagline {
+.intro .tagline {
   color: var(--color-muted);
   font-size: 1.1rem;
-  margin-bottom: 0;
+  margin-bottom: 1.3em;
 }
 
-@media (max-width: 700px) {
-  .hero-inner {
-    grid-template-columns: 1fr;
-    text-align: center;
+.intro p {
+  font-size: 1.05rem;
+}
+
+@media (max-width: 600px) {
+  .intro .headshot {
+    float: none;
+    display: block;
+    margin: 0 auto 22px;
+    width: 200px;
   }
-  .hero-photo img {
-    margin: 0 auto;
-    max-width: 200px;
+  .intro h1, .intro .tagline {
+    text-align: center;
   }
 }
 
@@ -221,10 +226,6 @@ section {
 .section-narrow {
   max-width: var(--content-width);
   margin: 0 auto;
-}
-
-.bio p {
-  font-size: 1.05rem;
 }
 
 /* Project cards grid */
@@ -283,37 +284,48 @@ section {
 /* Books */
 
 .book-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 28px;
-  margin-top: 24px;
-}
-
-.book-card {
   display: flex;
-  gap: 18px;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  padding: 18px;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-top: 20px;
 }
 
-.book-card img {
-  width: 100px;
-  flex-shrink: 0;
+.book-cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 160px;
+  color: var(--color-text);
+}
+
+.book-cover:hover {
+  text-decoration: none;
+}
+
+.book-cover img {
+  width: 160px;
+  height: auto;          /* preserve the cover's natural ratio */
   border-radius: 4px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+  box-shadow: 0 5px 14px rgba(0,0,0,0.18);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.book-card h3 {
-  margin-top: 0;
-  font-size: 1.05rem;
+.book-cover:hover img {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.22);
 }
 
-.book-card p {
-  font-size: 0.92rem;
+.book-cover span {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  line-height: 1.4;
   color: var(--color-muted);
-  margin-bottom: 0.5em;
+}
+
+.book-cover:hover span em {
+  color: var(--color-accent);
 }
 
 /* Page header (project / publications pages) */
