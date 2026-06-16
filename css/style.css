@@ -585,7 +585,8 @@ body.elle-theme .page-figure img {
   padding: 14px 18px;
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 600;
-  color: var(--color-heading);
+  background: var(--color-accent);
+  color: #ffffff;
   list-style: none;
   display: flex;
   justify-content: space-between;
@@ -597,7 +598,7 @@ body.elle-theme .page-figure img {
 
 .team > summary::after {
   content: "\25BE";
-  color: #5da8af;
+  color: #ffffff;
   font-size: 1.1rem;
   transition: transform 0.2s ease;
   flex-shrink: 0;
@@ -605,11 +606,11 @@ body.elle-theme .page-figure img {
 
 .team[open] > summary::after { transform: rotate(180deg); }
 
-.team > summary:hover { background: #eaf1f4; }
+.team > summary:hover { background: var(--color-accent-dark); }
 
 .team .year {
   font-weight: 400;
-  color: var(--color-muted);
+  color: rgba(255,255,255,0.8);
   font-size: 0.85rem;
 }
 
