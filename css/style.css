@@ -479,3 +479,155 @@ section {
   margin: 18px 0 0;
   font-weight: 600;
 }
+
+/* ============================================================
+   ELLE page theme — matches the chdr.cs.ucf.edu/elle platform
+   (slate blue #3f6184 + teal #5da8af on light backgrounds)
+   ============================================================ */
+
+body.elle-theme {
+  --color-bg: #eaf1f4;
+  --color-surface: #ffffff;
+  --color-border: #c7d8e2;
+  --color-muted: #566472;
+  --color-text: #20303f;
+  --color-accent: #3f6184;
+  --color-accent-dark: #2f4a66;
+  --color-header: #3f6184;
+  --color-header-dark: #2f4a66;
+  --color-heading: #2f4a66;
+}
+
+/* keep the active-nav pill visible against the slate-blue header */
+body.elle-theme .nav-links a.active {
+  background: #5da8af;
+  color: #fff;
+}
+
+body.elle-theme .page-figure img,
+body.elle-theme .gallery img {
+  border-radius: 12px;
+}
+
+/* Game catalog cards (platform style) */
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.game-card {
+  --ga: #5da8af;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: 5px solid var(--ga);
+  border-radius: 12px;
+  padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.game-card:nth-child(even) {
+  --ga: #3f6184;
+}
+
+.game-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(47, 74, 102, 0.14);
+}
+
+.game-card h3 {
+  margin: 0 0 0.4em;
+  font-size: 1.12rem;
+  color: var(--color-heading);
+}
+
+.game-card p {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  flex: 1;
+  margin-bottom: 1em;
+}
+
+.play-btn {
+  display: inline-block;
+  align-self: flex-start;
+  background: var(--ga);
+  color: #fff;
+  border-radius: 12px;
+  padding: 9px 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.play-btn:hover {
+  filter: brightness(0.92);
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Development team dropdowns */
+
+.team-list {
+  margin-top: 20px;
+  display: grid;
+  gap: 10px;
+}
+
+.team {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.team > summary {
+  cursor: pointer;
+  padding: 14px 18px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  color: var(--color-heading);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.team > summary::-webkit-details-marker { display: none; }
+
+.team > summary::after {
+  content: "\25BE";
+  color: #5da8af;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.team[open] > summary::after { transform: rotate(180deg); }
+
+.team > summary:hover { background: #eaf1f4; }
+
+.team .year {
+  font-weight: 400;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+.team .roster {
+  margin: 0;
+  padding: 2px 20px 16px 38px;
+  columns: 2;
+}
+
+.team .roster li {
+  margin-bottom: 4px;
+  break-inside: avoid;
+}
+
+@media (max-width: 520px) {
+  .team .roster { columns: 1; }
+}
