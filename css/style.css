@@ -10,8 +10,8 @@
   --color-accent-dark: #0a2db0;
   --color-header: #2f6b5e;      /* deep teal (mint family) for nav/footer */
   --color-header-dark: #25564b;
-  --color-header-text: #14532d; /* dark green header text (all pages) */
-  --color-heading: #1f3d36;     /* dark teal-green headings */
+  --color-header-text: #134e4a; /* dark teal header text (all pages) */
+  --color-heading: #15315c;     /* navy blue page headings */
   --max-width: 1100px;
   --content-width: 760px;
   --radius: 10px;
@@ -113,7 +113,7 @@ li {
 
 .site-title:hover {
   text-decoration: none;
-  color: #0e3a20;
+  color: #0a3a3a;
 }
 
 .site-title .degree {
@@ -518,7 +518,6 @@ body.elle-theme {
   --color-accent: #3f6184;
   --color-accent-dark: #2f4a66;
   --color-header-dark: #2f4a66;
-  --color-heading: #2f4a66;
 }
 
 body.elle-theme .page-figure img {
@@ -554,11 +553,11 @@ body.elle-theme .page-figure img {
 .game-thumb {
   display: block;
   width: 100%;
-  max-width: 300px;
+  max-width: 540px;       /* same width as the Student team dropdowns */
   height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.16);
-  margin: 0 auto 14px;
+  margin: 0 0 14px;
 }
 
 .game-entry p {
@@ -638,4 +637,54 @@ body.elle-theme .page-figure img {
 
 @media (max-width: 520px) {
   .team .roster { columns: 1; }
+}
+
+/* ELLE table of contents */
+
+.toc {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin: 20px 0 8px;
+}
+
+.toc h2 {
+  margin: 0 0 12px;
+  font-size: 1.15rem;
+}
+
+.toc ol {
+  margin: 0;
+  padding-left: 1.4em;
+  columns: 2;
+  column-gap: 32px;
+  font-size: 0.95rem;
+}
+
+.toc li {
+  margin-bottom: 5px;
+  break-inside: avoid;
+}
+
+@media (max-width: 560px) {
+  .toc ol { columns: 1; }
+}
+
+.game-entry { scroll-margin-top: 80px; }
+
+/* Publications & presentations */
+
+.pub-venue {
+  font-weight: 700;
+  color: var(--color-heading);
+  margin: 18px 0 2px;
+  font-size: 0.95rem;
+}
+
+.pub-cite {
+  margin: 0 0 4px;
+  padding-left: 1.2em;
+  font-size: 0.95rem;
+  color: var(--color-text);
 }
