@@ -192,11 +192,11 @@ li {
 }
 
 .intro .headshot {
-  float: right;
-  width: 96px;
+  float: left;
+  width: 172px;
   border-radius: var(--radius);
   box-shadow: 0 4px 12px rgba(0,0,0,0.16);
-  margin: 4px 0 12px 22px;
+  margin: 6px 26px 10px 0;
 }
 
 .intro h1 {
@@ -218,7 +218,7 @@ li {
     float: none;
     display: block;
     margin: 0 auto 22px;
-    width: 90px;
+    width: 150px;
   }
   .intro h1, .intro .tagline {
     text-align: center;
@@ -654,9 +654,9 @@ body.elle-theme .page-figure img {
   font-size: 1.15rem;
 }
 
-.toc ol {
+.toc ul {
   margin: 0;
-  padding-left: 1.4em;
+  padding-left: 1.2em;
   columns: 2;
   column-gap: 32px;
   font-size: 0.95rem;
@@ -668,7 +668,7 @@ body.elle-theme .page-figure img {
 }
 
 @media (max-width: 560px) {
-  .toc ol { columns: 1; }
+  .toc ul { columns: 1; }
 }
 
 .game-entry { scroll-margin-top: 80px; }
