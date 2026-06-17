@@ -614,10 +614,21 @@ body.elle-theme .page-figure img {
   font-size: 0.85rem;
 }
 
+.team .team-group {
+  margin: 14px 20px 2px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-heading);
+}
+
 .team .roster {
   margin: 0;
-  padding: 2px 20px 16px 38px;
+  padding: 2px 20px 8px 38px;
   columns: 2;
+}
+
+.team > .roster:last-child {
+  padding-bottom: 16px;
 }
 
 .team .roster li {
