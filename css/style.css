@@ -1,11 +1,10 @@
 :root {
-  /* Palette drawn from the original ekjphd.com WordPress theme:
-     mint/seafoam body background with vivid blue links. */
-  --color-bg: #d8ede8;          /* lighter teal (a few shades up from WP mint) */
-  --color-surface: #ffffff;     /* content cards */
+
+  --color-bg: #ffffff;          
+  --color-surface: #ffffff;     
   --color-text: #29302e;
   --color-muted: #566260;
-  --color-border: #a9d0c6;      /* mint-tinted border */
+  --color-border: #a9d0c6;      
   --color-accent: #053ffc;      /* WP link / accent blue */
   --color-accent-dark: #0a2db0;
   --color-header: #2f6b5e;      /* deep teal (mint family) for nav/footer */
@@ -36,6 +35,8 @@ body {
   color: var(--color-text);
   background: var(--color-bg);
   line-height: 1.65;
+  border: 12px solid #d8ede8;
+  min-height: 100vh;
 }
 
 h1, h2, h3, h4 {
